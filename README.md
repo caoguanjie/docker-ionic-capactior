@@ -17,7 +17,7 @@ ionic8.x和capacitor6.x的docker容器部署环境
 docker pull caoguanjie/docker-ionic-capacitor:latest
 
 # or run the image interactively
-docker run --rm --name docker-ionic-capacitor -it beevelop/android:v2023.12.1 bash
+docker run --rm --name docker-ionic-capacitor -it caoguanjie/docker-ionic-capacitor:latest bash
 
 
 ```
