@@ -1,0 +1,19 @@
+name: Push to Docker Hub
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: push
+        run: |
+          VERSION=${GITHUB_REF:11}
+          docker login -u caoguanjie -p ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+          docker build -f ./Dockerfile -t caoguanjie/docker-ionic-capacitor:latest -t caoguanjie/docker-ionic-capacitor:v${VERSION} .
+          docker push caoguanjie/docker-ionic-capacitor:latest
+          docker push caoguanjie/docker-ionic-capacitor:v${VERSION}
