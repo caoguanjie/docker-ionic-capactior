@@ -4,7 +4,7 @@ FROM beevelop/android:v2023.12.1
 LABEL  caoguanjie [caogj@fits.com.cn]
 
 # ENV: 构建的时候设置环境变量
-ENV NODE_VERSION=node_20.x \
+ENV NODE_VERSION=node_18.x \
     IONIC_VERSION=7.2.0
 
 
