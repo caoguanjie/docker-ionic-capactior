@@ -16,6 +16,7 @@ RUN apt-get update && apt-get install -y curl gnupg2 lsb-release && \
     echo "deb https://deb.nodesource.com/$VERSION $DISTRO main" | tee /etc/apt/sources.list.d/nodesource.list && \
     echo "deb-src https://deb.nodesource.com/$VERSION $DISTRO main" | tee -a /etc/apt/sources.list.d/nodesource.list && \
     apt-get update && apt-get install -y nodejs && \
+    apt-get -y install openjdk-17-jdk-headless && \
     node -v && npm -v && \
     npm install -g pnpm && \
     npm install -g --unsafe-perm @ionic/cli@${IONIC_VERSION} && \
