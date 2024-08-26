@@ -25,7 +25,6 @@ RUN apt-get update && apt-get install -y curl gnupg2 lsb-release && \
     ionic start myNewProject blank --type=vue --capacitor && \
     cd myNewProject && \
     ionic build && \
-    ionic capacitor build android --no-open && \
     rm -rf /tmp/myNewProject && \
     npx @capacitor/cli telemetry off && \
     apt-get clean && \
